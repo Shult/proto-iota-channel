@@ -1,8 +1,8 @@
 # Prototype : Channel IOTA Identity 
 
-# I - Authentification 
+## 0 - Authentification 
 
-### I.1 - Création de l'identité 1
+### 0.1 - Création de l'identité 1
 
 **Première étape :** Création du fichier JSON contenant les données nécessaire à la création d'une identité.
 
@@ -51,22 +51,64 @@ Modifier :
 npm run start
 ```
 
-### I.2 - Création de l'identité 2
+### 0.2 - Création de l'identité 2
 
 Même chose que précédemment en renommant les variables différemment 
 
+## I - Création du channel par l'identité 1
 
-
-
-
-
-
-# II - Création du channel par l'identité 1
-
-Programme écrit de mes propres mains donc pas possible de l'avoir directement pour le moment étant donné que je n'ai pas accès à GIT.
-
-Exécuter
+Pour la suite tout ce passe dans le répertoire : "integration-services/client/client-sdk/examples"
+- Modifier l'authentification avec le did et la secret key de l'identité 1 dans le fichier I-ownerCreateChannel.
+- Exécuter
 ```
 npm run I-ownerCreateChannel
+```
+
+## II - L'identité 2 envoie une demande de souscription au channel
+- Modifier l'authentification avec le did et la secret key de l'identité 2.
+- Récupérer l'adresse du channel et modifié la dans le fichier II-userRequestChannel.ts .
+- Exécuter
+```
+npm run II-userRequestChannel
+```
+
+## III - L'identité 1 accepte la demande
+- Modifier l'authentification avec le did et la secret key de l'identité 1.
+- Récupérer l'adresse du channel et modifié la dans le fichier III-ownerAuthorizedSubscription.ts .
+- Exécuter
+```
+npm run III-ownerAuthorizedSubcription.ts .
+```
+
+## IV - L'identité 2 écrit sur le channel 
+- Modifier l'authentification avec le did et la secret key de l'identité 2.
+- Récupérer l'adresse du channel et modifié la dans le fichier IV-userWriteToTheChannel.ts .
+- Exécuter
+```
+npm run IV-userWriteToTheChannel
+```
+
+## IV.1 - L'identité 1 écrit sur le channel
+- Modifier l'authentification avec le did et la secret key de l'identité 1.
+- Récupérer l'adresse du channel et modifié la dans le fichier IV.1-userWriteToTheChannel.ts .
+- Exécuter
+```
+npm run IV.1-userWriteToTheChannel
+```
+
+## V - L'identité 1 lit les messages présent sur le channel
+- Modifier l'authentification avec le did et la secret key de l'identité 1.
+- Récupérer l'adresse du channel et modifié la dans le fichier V-ownerReadFromTheChannel.ts .
+- Exécuter
+```
+npm run V-ownerReadFromTheChannel
+```
+
+## V.1 - L'identité 2 lit les messages présent sur le channel
+- Modifier l'authentification avec le did et la secret key de l'identité 2.
+- Récupérer l'adresse du channel et modifié la dans le fichier V.1-ownerReadFromTheChannel.ts .
+- Exécuter
+```
+npm run V.1-ownerReadFromTheChannel
 ```
 
