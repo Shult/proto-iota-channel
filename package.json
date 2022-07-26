@@ -1,0 +1,49 @@
+{
+  "name": "is-client-examples",
+  "version": "0.0.1",
+  "description": "Examples on how to use the javascript client for the integration services.",
+  "scripts": {
+    "I-ownerCreateChannel": "ts-node I-ownerCreateChannel.ts",
+    "II-userRequestChannel": "ts-node II-userRequestChannel.ts",
+    "III-ownerAuthorizedSubscription": "ts-node III-ownerAuthorizedSubscription.ts",
+    "IV-userWriteToTheChannel": "ts-node IV-userWriteToTheChannel.ts",
+    "IV.1-ownerWriteToTheChannel": "ts-node IV.1-ownerWriteToTheChannel.ts",
+    "V-ownerReadFromTheChannel": "ts-node V-ownerReadFromTheChannel.ts",
+    "V.1-userReadFromTheChannel": "ts-node V.1-userReadFromTheChannel.ts",
+    "CI-CreateAndIssueCredential": "ts-node CI-CreateAndIssueCredential.ts",
+    "CII-checkCredential": "ts-node CII-checkCredential.ts",
+    "example-0": "ts-node 0-MakeRootIdentityAdmin.ts",
+    "example-1": "ts-node 1-CreateIdentityAndCredential.ts",
+    "example-1.1": "ts-node 1.1-CreateIdentitySylvain.ts",
+    "example-2": "ts-node 2-UpdateUser.ts",
+    "example-3": "ts-node 3-DeleteUser.ts",
+    "example-4": "ts-node 4-TrustedAuthorities.ts",
+    "example-5": "ts-node 5-CreateChannel.ts",
+    "example-5.1": "ts-node 5.1-CreateChannel.ts",
+    "example-6": "ts-node 6-AuthorizeToChannel.ts",
+    "example-6.1": "ts-node 6.1-AuthorizeToChannel.ts",
+    "example-7": "ts-node 7-SearchChannelAndValidateData.ts"
+  },
+  "author": {
+    "name": "Tim Sigl",
+    "email": "tim.sigl@iota.org"
+  },
+  "contributors": [
+    {
+      "name": "Mastrogiovanni",
+      "email": "michele.mastrogiovanni@gmail.com"
+    }
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@iota/is-client": "0.1.11",
+    "@iota/is-shared-modules": "0.1.5",
+    "dotenv": "^10.0.0",
+    "mongodb": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.6.2"
+  }
+}
