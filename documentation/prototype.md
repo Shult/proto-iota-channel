@@ -112,3 +112,17 @@ npm run V-ownerReadFromTheChannel
 npm run V.1-ownerReadFromTheChannel
 ```
 
+## CI - Create and Issue credential
+- Exécuter
+```
+npm run CI-createAndIssueCredential
+```
+
+## CII - Check credential
+- Exécuter
+```
+npm run CII-checkCredential
+```
+Problème : 
+- [ ] En soit la vérification fonctionne mais en recréant un credential pas en vérifiant réellement le credential fournis
+- [ ] Changer la façon d'envoyer le credential
