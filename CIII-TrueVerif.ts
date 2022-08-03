@@ -1,16 +1,12 @@
 import { IdentityClient, CredentialTypes, UserType, IdentityJson } from '@iota/is-client';
 import { defaultConfig } from './configuration';
 import { readFileSync } from 'fs';
-import { writeFileSync } from 'fs';
 
-async function createAndIssueCredentials() {
+async function createIdentityAndCheckVCs() {
   const identity = new IdentityClient(defaultConfig);
 
   // Recover the admin identity
   const adminIdentity = JSON.parse(readFileSync('./adminIdentity.json').toString()) as IdentityJson;
-  
-  // Recover the user identity
-  const userIdentity = JSON.parse(readFileSync('./sylvainIdentityFrom0.json').toString()) as IdentityJson;
 
   // Authenticate as the admin identity
   await identity.authenticate(adminIdentity.doc.id, adminIdentity.key.secret);
@@ -23,9 +19,12 @@ async function createAndIssueCredentials() {
 
   console.log('Identity Credential of Admin', identityCredential);
 
+  // Create identity for user
+  const username = 'User-' + Math.ceil(Math.random() * 100000);
+  const userIdentity = await identity.create(username);
 
   console.log('~~~~~~~~~~~~~~~~');
-  console.log('User identity: ', userIdentity);
+  console.log('Created user identity: ', userIdentity);
   console.log('~~~~~~~~~~~~~~~~');
   // Assign a verifiable credential to the user as rootIdentity.
   // With the BasicIdentityCredential the user is not allowed to issue further credentials
@@ -35,20 +34,16 @@ async function createAndIssueCredentials() {
     CredentialTypes.BasicIdentityCredential,
     UserType.Person,
     {
-      diplome: "Diplôme dingénieur",
-      annee: "2024"
+      profession: 'Professor'
     }
   );
 
   console.log('Created credential: ', userCredential);
   console.log('~~~~~~~~~~~~~~~~');
-  writeFileSync('sylvainCredential.json', JSON.stringify(userCredential, null, 2));
-
   // Verify the credential issued
   const verified = await identity.checkCredential(userCredential);
 
   console.log('Verification result: ', verified);
 }
 
-
-createAndIssueCredentials();
+createIdentityAndCheckVCs();

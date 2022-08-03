@@ -41,6 +41,7 @@ async function checkCredential() {
   console.log(userCredential);
 
   console.log('Verification result: ', verified);
+
 }
 
 checkCredential();

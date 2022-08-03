@@ -1,3 +1,0 @@
-# SSI bridge API REFERENCE
-
-

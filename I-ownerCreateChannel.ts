@@ -26,5 +26,9 @@ async function ownerCreateChannel() {
   await ownerClient.write(channelAddress, {
     payload: { log: `First message on the channel` }
   });
+
+  // Create link to send request to this channel
+  const linkRequest = "http://localhost:3002/api/v0.1/subscriptions/request/"+channelAddress+"?api-key=5a3eb628-8cdb-43c9-86d9-37fdf07c01fe";
+  console.log(linkRequest);
 }
 ownerCreateChannel();

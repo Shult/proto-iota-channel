@@ -9,7 +9,9 @@
     "IV-userWriteToTheChannel": "ts-node IV-userWriteToTheChannel.ts",
     "IV.1-ownerWriteToTheChannel": "ts-node IV.1-ownerWriteToTheChannel.ts",
     "V-ownerReadFromTheChannel": "ts-node V-ownerReadFromTheChannel.ts",
+    "V-ownerReadHistoryFromTheChannel": "ts-node V-ownerReadHistoryFromTheChannel.ts",
     "V.1-userReadFromTheChannel": "ts-node V.1-userReadFromTheChannel.ts",
+    "V.1-userReadHistoryFromTheChannel": "ts-node V.1-userReadHistoryFromTheChannel.ts",
     "CI-CreateAndIssueCredential": "ts-node CI-CreateAndIssueCredential.ts",
     "CII-checkCredential": "ts-node CII-checkCredential.ts",
     "example-0": "ts-node 0-MakeRootIdentityAdmin.ts",
@@ -39,10 +41,14 @@
     "@iota/is-client": "0.1.11",
     "@iota/is-shared-modules": "0.1.5",
     "dotenv": "^10.0.0",
-    "mongodb": "^4.4.1"
+    "isomorphic-fetch": "^3.0.0",
+    "mongodb": "^4.4.1",
+    "readline": "^1.3.0",
+    "scanf": "^1.1.2"
   },
   "devDependencies": {
-    "@types/node": "^18.6.1",
+    "@types/node": "^18.6.2",
+    "@types/yargs": "^17.0.10",
     "ts-node": "^10.4.0",
     "typescript": "^4.6.2"
   }
