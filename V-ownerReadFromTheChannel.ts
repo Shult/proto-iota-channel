@@ -9,9 +9,11 @@ import "isomorphic-fetch";
 const ownerClient = new ChannelClient(defaultConfig);
 
 async function ownerCreateChannel() {
-  // For the credential
   const identity = new IdentityClient(defaultConfig);
+  /*
+  // For the credential, we don't need anymore to read the user identity, the user now send his credential by a message in the channel
   const userIdentity = JSON.parse(readFileSync('./sylvainIdentityFrom0.json').toString()) as IdentityJson;
+  */
 
   // Recover the admin identity
   const adminIdentity = JSON.parse(readFileSync('./adminIdentity.json').toString()) as IdentityJson;
@@ -57,7 +59,7 @@ async function ownerCreateChannel() {
 		}
 
 		if(payload == "easter egg"){
-			console.log("T'es le boss");
+			console.log("Just a test");
 		}		
 
 		// Enter a valid DID to get a credentials
@@ -92,7 +94,7 @@ async function ownerCreateChannel() {
 				UserType.Person,
 				{
 					//firstname: "MESTRE",
-					//lastname: "Shult",
+					//lastname: "Sylvain",
 					//age: "22"
 					firstname: payloadJSON.firstname,
                                         lastname: payloadJSON.lastname,
