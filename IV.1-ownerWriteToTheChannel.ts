@@ -11,8 +11,8 @@ async function ownerWriteToTheChannel() {
 
   // Writing data to channel as the channel owner. Make sure to authorize potential channel readers beforehand.
   console.log('Writing to channel...');
-  await ownerClient.write("624c8f78c869286f848fc682e94288af36a491a8d3e893c081ae7d1418c0e0440000000000000000:570fbeacd99c26b686a6b9db", {
-    payload: { log: "Hey, I'm the channel owner, welcom everyone !" }
+  await ownerClient.write("e5a68d7c62652d3c5acb8fb7366a67ce52e921b90a870ed82941cc0db6d66c0b0000000000000000:4097c1bd8c6c9841fc9d7f2a", {
+    payload: "checkMyCredential"
   });
 
 }

@@ -1,8 +1,8 @@
-import { IdentityClient, CredentialTypes, UserType, IdentityJson } from '@iota/is-client';
+import { AccessRights, IdentityClient, ChannelClient, CredentialTypes, UserType, IdentityJson } from '@iota/is-client';
 import { defaultConfig } from './configuration';
 import { readFileSync } from 'fs';
 import { externalDriverCredential1 } from './externalData';
-
+import { writeFileSync } from 'fs';
 async function trustedAuthorities() {
   const identity = new IdentityClient(defaultConfig);
 
@@ -11,7 +11,7 @@ async function trustedAuthorities() {
 
   // Recover the user credential
   //const driverCredential = JSON.parse(readFileSync('./driverlicense.json').toString()) as Credential;
-  const driverCredential = JSON.parse(readFileSync('./idCardSylvain.json').toString()) as Credential;
+  //const driverCredential = JSON.parse(readFileSync('./idCardSylvain.json').toString()) as Credential;
 
   // Authenticate as the admin identity
   await identity.authenticate(adminIdentity.doc.id, adminIdentity.key.secret);

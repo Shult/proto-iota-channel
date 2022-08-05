@@ -9,14 +9,16 @@ async function ownerCreateChannel() {
   // Recover the admin identity
   const adminIdentity = JSON.parse(readFileSync('./adminIdentity.json').toString()) as IdentityJson;
   
-  const channelAddress = "5b1de17c370bbdbf6ce9b245d3a5e744d55b669ad6a7e6d0ef9c5d428f29017f0000000000000000:3a1dda08b0be93690dbb8cc8";
+  const channelAddress = "e5a68d7c62652d3c5acb8fb7366a67ce52e921b90a870ed82941cc0db6d66c0b0000000000000000:4097c1bd8c6c9841fc9d7f2a";
   // Authenticate as the owner of the channel 
   await ownerClient.authenticate(adminIdentity.doc.id, adminIdentity.key.secret);
    
   // Find subscriptions to the channel that are not already authorized.
   const subscriptions = await ownerClient.findAllSubscriptions(channelAddress, false);
+  const subscriptions2 = await ownerClient.findAllSubscriptions(channelAddress, true);
 
   console.log('Subscriptions Found:', subscriptions);
+  console.log("Already subscribe", subscriptions2);
   const unauthorizedSubscriptions = subscriptions.filter(
     (subscription) => !subscription.isAuthorized
   );
