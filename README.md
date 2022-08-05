@@ -52,7 +52,7 @@ git, npm
 ```
 git clone https://github.com/iotaledger/integration-services.git
 ```
-[Suivre le wiki pour configurer le services](https://wiki.iota.org/integration-services/getting_started/installation/node_setup)
+[Suivre le wiki pour configurer le service](https://wiki.iota.org/integration-services/getting_started/installation/node_setup)
 
 **is-node-authentication**
 ```
