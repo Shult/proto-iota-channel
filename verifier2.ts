@@ -19,8 +19,10 @@ async function verifier() {
 	const trustedAuthorities2 = await identity.getTrustedAuthorities();
 	console.log('Trusted authorities: ', trustedAuthorities2);
 
+	const channelID = readFileSync('./channelID.txt').toString();
+
 	// Address du channel
-	const channelAddress = "d6f21075c8e6b88ff84991c606c895c4133b8daecaa93e182a52accd6449da5c0000000000000000:1bd4b67a050b0500c46c50f9";
+	const channelAddress = channelID;
 
 	// Reading the channel as the verifier
 	console.log('Reading as the verifier...');

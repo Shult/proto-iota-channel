@@ -11,11 +11,11 @@ const userClient = new ChannelClient(defaultConfig);
 
 async function userWriteToTheChannel() {
 	// Authentification as a user (Alice)
-	const adminIdentity = JSON.parse(readFileSync('./aliceIdentity.json').toString()) as IdentityJson;
+	const adminIdentity = JSON.parse(readFileSync('./userIdentity.json').toString()) as IdentityJson;
 	await userClient.authenticate(adminIdentity.doc.id, adminIdentity.key.secret);
   
 	// Address of the channel
-	const channelAddress = "b20fec6b0e0e46c07ebd567fc42debf5b50a74f51fce51902166763c16e5b7730000000000000000:96535c623ce19ba653d590f5";
+	const channelAddress = "d6f21075c8e6b88ff84991c606c895c4133b8daecaa93e182a52accd6449da5c0000000000000000:1bd4b67a050b0500c46c50f9";
   
 	// Writing data to channel as the channel owner. Make sure to authorize potential channel readers beforehand.
 	console.log('Writing to channel...');
@@ -57,6 +57,14 @@ function delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
+const prompt = require("prompt-sync")({ sigint: true });
+const cmd = prompt("Enter 'A' to askCredential and 'C' to checkCredential? ");
+console.log(`You are ${cmd} years old.`);
+if(cmd=="A"){
+	console.log("asking credential...");
+}else if (cmd=="C"){
+	console.log("checking credential");
+}
 userWriteToTheChannel();
 
 
